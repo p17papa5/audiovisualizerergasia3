@@ -1,0 +1,38 @@
+html { height: 100%; display: flex; background: #3114d9; color: white; }
+body { margin: auto; text-align: center;}
+
+.visualizer { /* visualizer */
+  display: flex; /* to kouti p einai mesa ta nodes*/
+  width: 70vw; /* platos */
+  height: 60vmin; /* ypsos */
+  padding: 9px; /* apostasi apo boarder k to visualizer */
+  box-sizing: border-box; /* boarder (gia na to blepoume)*/
+  border: 5px solid red; /* xroma border */
+  overflow: hidden; 
+  transform-style: preserve-3d; /* 3d */
+  perspective: 1500px;
+}
+
+.node { /* mpares - stiles - nodes */
+  display: block; /* na einai blocks */
+  width: 5em; /* platos */
+  height: 300%; /* ypsos*/
+  flex: 1 1 auto; /* poso 8a megalonoun */
+  background: black; 
+  background: rgb(var(--c, 0), 155, 250); /* xromata twn nodes */
+  transform-origin: up bottom;
+  margin: 3px; /* keno meta3i tous */
+
+  transform: scaleY( var(--level, 0.1) ); /* pernei ta dedomena apo JS kai ta dinei sta nodes */
+
+  transform: /* gia na enfanizonte ligo pio mprosta ta nodes kai na anigoun pros to plai */
+    translateZ( calc( 
+      (1 - var(--level, 0)) * -250px
+    ) )
+
+    scaleY( calc( 
+      (var(--level,0) * 0.75) + 0.25) 
+    );
+  
+    }
+  }
